@@ -7,6 +7,7 @@ var weekend ;
 var weekendArray = [];
 var space = ' ';
 var weekend3Array =[];
+var weekendReverse = [];
 
 $(document).ready(function(){
   // console.log("weekend");
@@ -24,7 +25,10 @@ $(document).ready(function(){
     // console.log(weekendArray);
       word3(weekendArray);
       console.log(weekend3Array)
-  });
+      weekendReverse = weekend3Array.reverse();
+      var reverseString = weekendReverse.join(' ');
+      alert(reverseString);
+    });
 
   function word3(weekendArray){
     var arraylength = weekendArray.length;
@@ -36,5 +40,7 @@ $(document).ready(function(){
   };
   };
   };
+
+
 
 });
