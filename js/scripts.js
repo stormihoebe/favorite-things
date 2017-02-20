@@ -9,6 +9,8 @@ var space = ' ';
 var weekend3Array =[];
 var weekendReverse = [];
 
+var weekendSplit = [];
+
 $(document).ready(function(){
   // console.log("weekend");
 
@@ -24,10 +26,16 @@ $(document).ready(function(){
   //   weekendArray = weekend.split(space);
     // console.log(weekendArray);
       word3(weekendArray);
-      console.log(weekend3Array)
+      // console.log(weekend3Array)
       weekendReverse = weekend3Array.reverse();
       var reverseString = weekendReverse.join(' ');
-      alert(reverseString);
+      // alert(reverseString);
+
+      //Remove punctuation from weekend string
+      weekend = weekend.replace(/[.,\/#!?$%\^&\*;:{}=\-_`~()]/g,"");
+      //split weekend string at spaces into array
+      weekendSplit = weekend.match(/\S+\s*/g);
+      console.log(weekendSplit);
     });
 
   function word3(weekendArray){
