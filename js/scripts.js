@@ -1,41 +1,40 @@
-var firstFav
-var secondFav
-var flavor
-var favArray
-var orderedArray = []
+// var firstFav
+// var secondFav
+// var flavor
+// var favArray
+// var orderedArray = []
+var weekend ;
+var weekendArray = [];
+var space = ' ';
+var weekend3Array =[];
 
 $(document).ready(function(){
+  // console.log("weekend");
 
-$("#form").submit(function(){
-  event.preventDefault();
-  firstFav = $("#firstFav").val();
-  secondFav = $("#secondFav").val();
-  flavor = $("input:radio[name=flavor]:checked").val();
+  $("#form").submit(function(){
+    event.preventDefault();
+    weekend = $("#weekend").val();
 
-  favArray = [firstFav, secondFav, flavor];
-  console.log(favArray)
-  var newFunction = function(){
-    orderedArray.push(favArray[1]);
-    orderedArray.push(favArray[0]);
-    orderedArray.push(favArray[2]);
+    weekendArray = weekend.split(" ");
+
+
+
+  // function splitString(weekend,space){
+  //   weekendArray = weekend.split(space);
+    // console.log(weekendArray);
+      word3(weekendArray);
+      console.log(weekend3Array)
+  });
+
+  function word3(weekendArray){
+    var arraylength = weekendArray.length;
+    for (i=0; i < arraylength; i++) {
+    // var word = weekendArray[i];
+    if (weekendArray[i].length >= 3){
+    weekend3Array.push(weekendArray[i]);
+
   };
-newFunction();
-$("#favoriteText").text(favArray[0]
-+ ", ");
-// alert(favArray[0])
-$("#favoriteText").append(favArray[1]
-+ ", and ");
-// alert(favArray[1])
-$("#favoriteText").append(favArray[2]);
-// alert(favArray[2])
-
-$(".confirm").show();// reorder();
-});
-// var reorder = function(){
-//
-//   orderedArray.push(favArray[1])
-
-
-
+  };
+  };
 
 });
