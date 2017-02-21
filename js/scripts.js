@@ -10,6 +10,7 @@ var weekend3Array =[];
 var weekendReverse = [];
 
 var weekendSplit = [];
+// var countedWords = [];
 
 $(document).ready(function(){
   // console.log("weekend");
@@ -36,8 +37,25 @@ $(document).ready(function(){
       //split weekend string at spaces into array
       weekendSplit = weekend.match(/\S+\s*/g);
       console.log(weekendSplit);
+    
+      var countedWords = weekendSplit.reduce(function(allWords,word){
+         if (word in allWords){
+          allWords[word]++;
+         }
+         else {
+           allWords[word] = 1;
+         }
+         return allWords;
+
+       }, {});
+       console.log(countedWords);
     });
 
+
+
+
+
+alert("This is working")
   function word3(weekendArray){
     var arraylength = weekendArray.length;
     for (i=0; i < arraylength; i++) {
@@ -49,6 +67,6 @@ $(document).ready(function(){
   };
   };
 
-
+alert("This is working ALSO")
 
 });
